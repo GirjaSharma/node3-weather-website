@@ -10,7 +10,7 @@ const weatherRequest =(latitude, longitude, callback)=>{
       } else if(body.error){
         callback('Unable to connect to the server', undefined)
       } else{
-        callback(undefined, `It is currently ${body?.current?.temperature} degrees out. It feels like ${body?.current?.feelslike} degrees out. `)
+        callback(undefined, `It is currently ${body?.current?.temperature} degrees out. It feels like ${body?.current?.feelslike} degrees out. The visibility will be ${body?.current?.visibility}`)
       }
     })
   }
