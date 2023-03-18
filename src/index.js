@@ -6,6 +6,8 @@ const weatherRequest = require('./utils/weatherRequest')
 
 const app = express();
 
+const port = process.env.PORT || 3000
+
 // Defining paths for Express config
 const publicDir = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -86,6 +88,6 @@ app.get('*', (req,res)=>{    //* -- anything except urls provided
 res.render('404',{errorMessage:'Sorry! Page not available - 404', title: '404', name: 'Girja Sharma'})
 })
 
-app.listen(3000, ()=>{
-    console.log('Server started')
+app.listen(port, ()=>{
+    console.log('Server started'+ port)
 })
